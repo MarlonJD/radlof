@@ -1,0 +1,644 @@
+$theme-blue: #002b3c;
+$theme-orange: #cb6b36;
+$theme-white: #f5f5f5;
+$theme-gray: #002b3c26;
+@font-face {
+  font-family: "Minion Pro Regular";
+  src: url("../fonts/MinionProRegular.woff") format("woff");
+}
+@font-face {
+  font-family: "coolvetica";
+  src: url("../fonts/coolvetica.ttf");
+}
+
+* {
+  font-family: "coolvetica";
+  color: $theme-blue;
+}
+
+.landing-nav {
+  &.global-nav {
+    border-bottom: 2px solid $theme-blue;
+    padding: 40px 0;
+    .navbar-nav,
+    .navbar-brand,
+    .social-medias {
+      flex: initial;
+    }
+    .navbar-nav {
+      @media screen and (min-width: 992px) {
+        margin-left: 100px;
+      }
+    }
+    .navbar-brand {
+      display: block;
+    }
+  }
+  .navbar-brand {
+    &.desktop-brand {
+      display: none;
+    }
+  }
+  .navbar-collapse {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: $theme-blue;
+          font-size: 18px;
+          position: relative;
+          &::after {
+            position: absolute;
+            content: "";
+            height: 7px;
+            width: 7px;
+            border-radius: 50%;
+            background-color: $theme-orange;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: 300ms all;
+          }
+          &.active,
+          &:hover {
+            color: $theme-orange;
+            @media screen and (min-width: 992px) {
+              &::after {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .navbar-toggler-icon {
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28000, 000, 000, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+  @media screen and (min-width: 992px) {
+    .navbar-nav {
+      flex: 3;
+    }
+    .navbar-brand {
+      text-align: center;
+      flex: 1;
+      display: none;
+      &.desktop-brand {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+    }
+    .social-medias {
+      display: flex;
+      justify-content: flex-end;
+      flex: 3;
+    }
+  }
+}
+.social-medias {
+  a {
+    transition: 300ms all;
+    &:not(:first-child) {
+      margin-left: 16px;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+.hero {
+  &-img-container {
+    border: 2px solid $theme-gray;
+    width: 80%;
+    padding: 32px;
+    border-radius: 90rem;
+    height: 725px;
+    position: relative;
+    &-man {
+      width: 100%;
+      background-color: $theme-orange;
+      height: 650px;
+      padding: 30px;
+      object-fit: contain;
+      border-radius: 90rem;
+    }
+    &-box {
+      position: absolute;
+      height: 120px;
+      right: -16px;
+      top: 20%;
+    }
+    .img-shadow {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 21%;
+      opacity: 0.91;
+      background-color: #000;
+      mix-blend-mode: screen;
+      width: 50%;
+      height: 40px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    &-img-container {
+      width: 100% !important;
+      height: 625px;
+      &-man {
+        height: 550px;
+      }
+    }
+  }
+  &-title {
+    color: $theme-gray;
+    font-size: 18px;
+    @media screen and (max-width: 992px) {
+      margin: 24px 0;
+      width: 25%;
+      text-align: left;
+    }
+    @media screen and (max-width: 576px) {
+      margin: 24px 0;
+      width: 50%;
+      text-align: left;
+    }
+  }
+  &-number {
+    font-size: 54px;
+    font-family: "Minion Pro Regular";
+    color: $theme-blue;
+    line-height: 36px;
+    margin-top: 32px;
+    margin-bottom: 64px;
+    @media screen and (max-width: 992px) {
+      margin: 24px 0;
+      width: 25%;
+      text-align: left;
+    }
+    @media screen and (max-width: 992px) {
+      margin: 24px 0;
+      width: 25%;
+      text-align: left;
+    }
+  }
+  &-sponsor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    flex-wrap: wrap;
+    gap: 16px;
+    img {
+      width: calc(100 / 5);
+    }
+  }
+  &-desc {
+    font-size: 24px;
+    font-family: "Minion Pro Regular";
+    color: $theme-blue;
+    line-height: 36px;
+    margin-top: 50px;
+  }
+  &-nav {
+    margin-top: 32px;
+    list-style: none;
+    padding: 0;
+    &-item {
+      margin-top: 16px;
+      a {
+        font-size: 24px;
+        font-family: "Minion Pro Regular";
+        color: $theme-blue;
+        line-height: 36px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.landing-page-title {
+  font-size: 64px;
+  font-family: "Minion Pro Regular";
+  text-align: center;
+  line-height: 70px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.page-title {
+  font-size: 64px;
+}
+.sm-page-title {
+  font-size: 40px;
+}
+.landing-section {
+  border-bottom: 1px solid $theme-blue;
+  padding-top: 100px;
+  padding-bottom: 120px;
+  &-title {
+    font-family: "Minion Pro Regular";
+    font-size: 54px;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  &-gallery {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    img {
+      width: calc(100% / 5 - 16px);
+      flex: 1;
+      object-fit: cover;
+      @media screen and (max-width: 1200px) {
+        width: calc(100% / 3 - 16px);
+      }
+      @media screen and (max-width: 992px) {
+        width: calc(100% / 2 - 16px);
+      }
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+}
+.splide__pagination {
+  bottom: -2rem;
+  li {
+    button {
+      background-color: rgba($color: $theme-blue, $alpha: 0.5);
+      &.is-active {
+        background-color: $theme-blue;
+        opacity: 1;
+      }
+    }
+  }
+}
+.slider-card {
+  text-decoration: none;
+  h6 {
+    margin-top: 30px;
+    font-size: 18px;
+    color: $theme-gray;
+  }
+  h5 {
+    font-size: 32px;
+    font-family: "Minion Pro Regular";
+  }
+  img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+footer {
+  overflow: hidden;
+  padding: 40px 0;
+  background-color: $theme-white;
+  .footer-main {
+    @media screen and(max-width:992px) {
+      text-align: center;
+    }
+    padding-bottom: 100px;
+    padding-top: 40px;
+    &-small-title {
+      font-size: 32px;
+      &.centred {
+        @media screen and (min-width: 992px) {
+          margin-left: -20px;
+        }
+      }
+    }
+    address {
+      margin-top: 24px;
+      font-size: 20px;
+      color: rgba($color: $theme-blue, $alpha: 0.5);
+    }
+    &-mail {
+      font-size: 2.5rem;
+      color: $theme-blue;
+      text-decoration: none;
+      transition: 300ms all;
+      &:hover {
+        color: rgba($color: $theme-blue, $alpha: 0.7);
+      }
+    }
+    &-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      &-item {
+        margin-top: 16px;
+        a {
+          color: rgba($color: $theme-blue, $alpha: 0.5);
+          text-decoration: none;
+          transition: 300ms all;
+          font-size: 20px;
+          &:hover {
+            color: rgba($color: $theme-blue, $alpha: 0.7);
+          }
+        }
+      }
+    }
+  }
+  .footer-alt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    border-top: 1px solid $theme-blue;
+    font-size: 24px;
+    span {
+      flex: 3;
+    }
+    .social-medias {
+      flex: 3;
+      display: flex;
+      justify-content: flex-end;
+      a {
+        flex: initial;
+      }
+    }
+    a {
+      flex: 1;
+      color: $theme-blue;
+      text-decoration: none;
+    }
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.work {
+  padding: 100px 0;
+  .tab-content {
+    height: 500px;
+    overflow: hidden;
+  }
+  .nav-tabs {
+    padding-bottom: 40px;
+    .nav-item {
+      .nav-link {
+        border: none;
+        font-size: 18px;
+        color: $theme-blue;
+        &:first-child {
+          padding-left: 0;
+        }
+        &.active {
+          border: none;
+          color: $theme-orange;
+        }
+      }
+    }
+  }
+}
+.work-detail {
+  padding: 140px 0;
+  &-hero {
+    &-title {
+      color: $theme-gray;
+      font-size: 18px;
+    }
+    &-title-alt {
+      font-family: "Minion Pro Regular";
+      font-size: 24px;
+    }
+    &-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      &-item {
+        a {
+          font-family: "Minion Pro Regular";
+          font-size: 24px;
+          text-decoration: none;
+          color: $theme-blue;
+          transition: 300ms all;
+          &:hover {
+            color: $theme-orange;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    &-texts {
+      text-align: center;
+    }
+  }
+  .detail-container {
+    @media screen and (min-width: 992px) {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+  &-main-img {
+    object-fit: cover;
+    width: 100%;
+    margin-top: 100px;
+    @media screen and (min-width: 992px) {
+      height: 800px;
+    }
+  }
+  &-main-desc {
+    padding: 80px 0;
+    border-bottom: 1px solid $theme-blue;
+  }
+  .sm-page-title {
+    margin-top: 80px;
+    margin-bottom: 40px;
+  }
+  &-list {
+    &-item {
+      font-family: "Minion Pro Regular";
+      font-size: 24px;
+      line-height: 40px;
+      padding-left: 12px;
+      &::marker {
+        color: $theme-orange;
+      }
+    }
+  }
+
+  p {
+    font-family: "Minion Pro Regular";
+    font-size: 24px;
+    line-height: 40px;
+  }
+  @media screen and (max-width: 992px) {
+    padding: 80px 0;
+  }
+}
+
+.trio-gallery {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  &.last {
+    height: 600px;
+    @media screen and (max-width: 992px) {
+      height: 400px;
+    }
+  }
+}
+.about {
+  // background-color: red;
+  &-hero {
+    padding-bottom: 0px;
+    border-bottom: 1px solid $theme-blue;
+  }
+  &-title-alt {
+    font-size: 40px;
+    color: $theme-gray;
+    padding-bottom: 100px;
+
+    border-bottom: 1px solid $theme-blue;
+  }
+  &-desc {
+    padding-top: 100px;
+    max-width: 350px;
+  }
+  padding-bottom: 50px;
+  .row {
+    margin: 100px 0;
+  }
+  p {
+    font-size: 24px;
+    font-family: "Minion Pro Regular";
+  }
+  .accordion {
+    .accordion-item {
+      border-top: 1px solid $theme-blue;
+      &:last-child {
+        border-bottom: 1px solid $theme-blue;
+      }
+      .accordion-header {
+        .accordion-button {
+          font-size: 32px;
+          font-family: "Minion Pro Regular";
+          &:focus {
+            z-index: 3;
+            color: $theme-orange !important;
+            outline: 0;
+            box-shadow: none;
+          }
+          .iconify {
+            margin-right: 16px;
+            path {
+              color: $theme-orange !important;
+            }
+          }
+          &::after {
+            transform: rotate(-90deg);
+            background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23cb6b36'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+          }
+
+          &:not(.collapsed) {
+            color: $theme-orange !important;
+            background-color: rgba($color: $theme-orange, $alpha: 0.3);
+            box-shadow: inset 0 -1px 0 rgba($color: #000000, $alpha: 0.3);
+            &::after {
+              transform: rotate(0deg) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.contact {
+  padding: 80px 0;
+  &-title {
+    font-size: 32px;
+  }
+  address,
+  &-mail,
+  &-tel {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgba($color: $theme-blue, $alpha: 0.5);
+    display: block;
+    transition: 300ms all;
+  }
+  .social-medias {
+    margin-bottom: 60px;
+    img {
+      height: 32px;
+    }
+  }
+  form {
+    .contact-form-group {
+      display: flex;
+      margin-bottom: 50px;
+      .number {
+        font-size: 34px;
+        color: $theme-gray;
+        width: 35px;
+      }
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 40px;
+        label {
+          font-size: 32px;
+        }
+        .form-control{
+          border-radius: 0;
+          box-shadow: 0;
+          outline: 0;
+          padding:0;
+          padding-top: 25px;
+          &:focus{
+            box-shadow: none;
+            outline: 0;
+            
+          }
+        }
+        input,select{
+          width: 100%;
+          height: 60px;
+          border:none;
+          border-bottom: 1px solid $theme-blue;
+          outline: none;
+          font-size: 24px;
+          font-family: "Minion Pro Regular";
+          color: rgba($color: $theme-blue, $alpha: 0.25);
+          
+        
+        }
+        select{
+          position: relative;
+          background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23cb6b36'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+          background-repeat: no-repeat;
+          background-size: 1.25rem;
+          background-position: right;
+          -webkit-appearance: none;
+        }
+      }
+    }
+    button[type="submit"]{
+      font-size: 48px;
+      color: $theme-blue;
+      border: none;
+      background: transparent;
+      width: 100%;
+      text-align: left;
+      transition: 300ms all;
+      &:hover{
+        opacity: .7;
+      }
+      .iconify{
+        margin-left: 16px;
+        color: $theme-orange;
+        path{
+          color: $theme-orange;
+        }
+      }
+    }
+  }
+}
